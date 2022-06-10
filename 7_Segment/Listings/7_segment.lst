@@ -1,0 +1,48 @@
+C51 COMPILER V9.60.0.0   7_SEGMENT                                                         06/10/2022 17:48:18 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE 7_SEGMENT
+OBJECT MODULE PLACED IN .\Objects\7_segment.obj
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE 7_segment.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\7_
+                    -segment.lst) TABS(2) OBJECT(.\Objects\7_segment.obj)
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          #define segment P2
+   3          
+   4          void delay(unsigned int dly);
+   5            
+   6          void main (void){
+   7   1                                /*0     1     2     3     4     5     6     7     8     9*/
+   8   1        unsigned int nums[10] = {0x3f, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F};
+   9   1        unsigned int loop = 0;
+  10   1        while(1){/*infinite loop*/
+  11   2          for(loop = 0; loop < 10; loop++){
+  12   3            segment = nums[loop];
+  13   3            delay(50);
+  14   3          }
+  15   2        }
+  16   1      }
+  17          
+  18          void delay(unsigned int dly){
+  19   1        unsigned int loop = 0;
+  20   1        unsigned int delay_gen = 0;
+  21   1        for(loop = 0; loop < dly; loop++){
+  22   2          for (delay_gen = 0; delay_gen < 1000; delay_gen++); /*delay*/
+  23   2        }
+  24   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     98    ----
+   CONSTANT SIZE    =     20    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      22
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
