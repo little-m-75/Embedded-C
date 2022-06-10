@@ -1,0 +1,100 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    06/08/2022  17:33:07  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\delay.obj TO .\Objects\LED_Blink_freq_setting PRINT (.\Listings\L
+>> ED_Blink_freq_setting.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\delay.obj (DELAY)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\LED_Blink_freq_setting (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0013H     UNIT         ?PR?DELAY?DELAY
+            CODE    0813H     000CH     UNIT         ?C_C51STARTUP
+            CODE    081FH     0009H     UNIT         ?PR?MAIN?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\LED_Blink_freq_setting (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\LED_Blink_freq_setting (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:081FH         PUBLIC        main
+  B:00A0H.0       PUBLIC        LED
+  -------         PROC          MAIN
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  06/08/2022  17:33:07  PAGE 2
+
+
+  C:081FH         LINE#         5
+  C:081FH         LINE#         6
+  C:0821H         LINE#         7
+  C:0821H         LINE#         8
+  C:0823H         LINE#         9
+  C:0826H         LINE#         10
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0800H         PUBLIC        delay
+  D:0089H         PUBLIC        TMOD
+  B:0088H.5       PUBLIC        TF0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  -------         PROC          DELAY
+  C:0800H         LINE#         4
+  C:0800H         LINE#         5
+  C:0803H         LINE#         6
+  C:0806H         LINE#         7
+  C:0809H         LINE#         8
+  C:080BH         LINE#         9
+  C:080EH         LINE#         10
+  C:0810H         LINE#         11
+  C:0812H         LINE#         12
+  -------         ENDPROC       DELAY
+  -------         ENDMOD        DELAY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 001CH BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=43
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
