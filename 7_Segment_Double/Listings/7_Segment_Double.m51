@@ -1,0 +1,130 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    06/10/2022  19:05:43  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE .\Objects\7_Segment_Double.obj TO .\Objects\7_Segment_Double PRINT (.\Listings\7_Segment_Double
+>> .m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\7_Segment_Double.obj (7_SEGMENT_DOUBLE)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?COPY)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  .\Objects\7_Segment_Double (7_SEGMENT_DOUBLE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0018H     UNIT         _DATA_GROUP_
+            IDATA   0020H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     014BH     UNIT         ?C?LIB_CODE
+            CODE    094BH     005FH     UNIT         ?PR?MAIN?7_SEGMENT_DOUBLE
+            CODE    09AAH     002DH     UNIT         ?PR?_DELAY?7_SEGMENT_DOUBLE
+            CODE    09D7H     0014H     UNIT         ?CO?7_SEGMENT_DOUBLE
+            CODE    09EBH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\7_Segment_Double (7_SEGMENT_DOUBLE)
+
+
+SEGMENT                               DATA_GROUP 
+  +--> CALLED SEGMENT               START    LENGTH
+---------------------------------------------------
+?C_C51STARTUP                       -----    -----
+  +--> ?PR?MAIN?7_SEGMENT_DOUBLE
+
+?PR?MAIN?7_SEGMENT_DOUBLE           0008H    0018H
+  +--> ?CO?7_SEGMENT_DOUBLE
+  +--> ?PR?_DELAY?7_SEGMENT_DOUBLE
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\7_Segment_Double (7_SEGMENT_DOUBLE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        7_SEGMENT_DOUBLE
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  06/10/2022  19:05:43  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:09B7H         PUBLIC        _delay
+  B:00B0H.0       PUBLIC        dis1_cc
+  B:00B0H.1       PUBLIC        dis2_cc
+  C:094BH         PUBLIC        main
+  C:09D7H         SYMBOL        _?ix1000
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        nums
+  D:001CH         SYMBOL        loop
+  D:001EH         SYMBOL        loop2
+  -------         ENDDO         
+  C:094BH         LINE#         8
+  C:094BH         LINE#         10
+  C:095EH         LINE#         11
+  C:0963H         LINE#         13
+  C:0963H         LINE#         14
+  C:0968H         LINE#         15
+  C:0977H         LINE#         17
+  C:0979H         LINE#         18
+  C:097BH         LINE#         19
+  C:097DH         LINE#         20
+  C:0980H         LINE#         22
+  C:098FH         LINE#         23
+  C:0991H         LINE#         24
+  C:0993H         LINE#         25
+  C:0994H         LINE#         26
+  C:0997H         LINE#         27
+  -------         ENDPROC       MAIN
+  -------         PROC          L?0017
+  -------         ENDPROC       L?0017
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        dly
+  -------         DO            
+  D:0004H         SYMBOL        loop
+  D:0002H         SYMBOL        delay_gen
+  -------         ENDDO         
+  C:09B7H         LINE#         31
+  C:09B7H         LINE#         32
+  C:09BAH         LINE#         33
+  C:09BAH         LINE#         34
+  C:09C1H         LINE#         35
+  C:09CFH         LINE#         36
+  C:09D6H         LINE#         37
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        7_SEGMENT_DOUBLE
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?UIDIV
+  C:08F6H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  06/10/2022  19:05:43  PAGE 3
+
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00A0H BYTE ( 7%) *
+******************************************************************************
+
+Program Size: data=33.0 xdata=0 code=506
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,61 @@
+C51 COMPILER V9.60.0.0   7_SEGMENT_DOUBLE                                                  06/10/2022 19:05:43 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE 7_SEGMENT_DOUBLE
+OBJECT MODULE PLACED IN .\Objects\7_Segment_Double.obj
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE 7_Segment_Double.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\List
+                    -ings\7_Segment_Double.lst) TABS(2) OBJECT(.\Objects\7_Segment_Double.obj)
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          #define segment P2
+   3          sbit dis1_cc = P3^0; /*RXD*/
+   4          sbit dis2_cc = P3^1; /*TXD*/
+   5          
+   6          void delay(unsigned int dly);
+   7          
+   8          void main(void) {
+   9   1        
+  10   1        unsigned int nums[10] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F};/*display 0~9*/
+  11   1        unsigned int loop = 0, loop2;
+  12   1        
+  13   1        while(1){/*infinite loop*/
+  14   2          for(loop = 0; loop < 100; loop++){
+  15   3            loop2 = loop % 10;  //value of ones digit
+  16   3            
+  17   3            dis1_cc = 1;  //tens digit off
+  18   3            dis2_cc = 0;  //ones digit on
+  19   3            segment = nums[loop2];
+  20   3            delay(20);
+  21   3            
+  22   3            loop2 = loop / 10;  //value of tens digit
+  23   3            dis1_cc = 0;  //tens digit on
+  24   3            dis2_cc = 1;  //ones digit off
+  25   3            segment = nums[loop2];
+  26   3            delay(20);
+  27   3          }
+  28   2        }
+  29   1      }
+  30            
+  31          void delay(unsigned int dly){
+  32   1        unsigned int loop = 0;
+  33   1        unsigned int delay_gen = 0;
+  34   1        for(loop = 0; loop < dly; loop++){
+  35   2          for (delay_gen = 0; delay_gen < 1000; delay_gen++);
+  36   2        }
+  37   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    140    ----
+   CONSTANT SIZE    =     20    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      24
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
